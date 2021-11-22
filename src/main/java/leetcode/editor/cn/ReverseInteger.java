@@ -49,26 +49,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ReverseInteger {
-    public static final int INT_MAX = 1 << 31 -1;
-    public static final int INT_MIN = 1 >> 31;
-
-    public static final int[] T_10 = new int[]{
-            1,
-            10,
-            100,
-            1000,
-            10000,
-            100000,
-            1000000,
-            10000000,
-            100000000,
-            1000000000
-    };
     public static void main(String[] args) {
-        // Solution solution = new ReverseInteger().new Solution();
+        int res = 0;
 
-        Integer[] s = split(-2147483412);
-        System.out.println(join(s));
     }
 
 
@@ -106,7 +89,15 @@ public class ReverseInteger {
 
 
         public int reverse(int x) {
-            return 0;
+            int res = 0;
+            while (x != 0) {
+                if (res > Integer.MAX_VALUE / 10 || res < Integer.MIN_VALUE / 10) {
+                    return 0;
+                }
+                res = res * 10 + x % 10;
+                x /= 10;
+            }
+            return res;
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)
