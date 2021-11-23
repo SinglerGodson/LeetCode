@@ -97,6 +97,58 @@ public class ValidParentheses {
     }
 
 
+//    public static void main(String[] args) {
+//        long s = System.currentTimeMillis();
+//        System.out.println(new ValidParentheses().isValid("()")); ;
+//        System.out.println(System.currentTimeMillis() - s);
+//    }
+//    //leetcode submit region begin(Prohibit modification and deletion)
+//
+//    public boolean isValid(String s) {
+//        if (s.length() % 2 == 1) {
+//            return false;
+//        }
+//        Deque<Character> leftDeque = new LinkedList<>();
+//        int half = s.length() / 2 + 1;
+//        for (int i = 0; i < s.length(); i++) {
+//            char c = s.charAt(i);
+//            char left = getLeft(c);
+//            if (left == 'a') {
+//                leftDeque.push(c);
+//                if (leftDeque.size() > half) {
+//                    return false;
+//                }
+//            } else {
+//                if (!leftDeque.isEmpty()) {
+//                    char l = leftDeque.pop();
+//                    if (!isMatch(c, l)) {
+//                        return false;
+//                    }
+//                } else {
+//                    return false;
+//                }
+//            }
+//        }
+//        return leftDeque.isEmpty();
+//    }
+//
+//
+//    public Character getLeft(char right) {
+//        switch (right) {
+//            case '}': return '{';
+//            case ']': return '[';
+//            case ')': return '(';
+//            default: return 'a';
+//        }
+//    }
+//
+//    public boolean isMatch(char r, char l) {
+//        return (l == '{' && r == '}')
+//                || (l == '[' && r == ']')
+//                || (l == '(' && r == ')');
+//    }
+
+
     // 执行用时：1 ms, 在所有 Java 提交中击败了99.14%的用户
     // 内存消耗：36.4 MB, 在所有 Java 提交中击败了92.38%的用户
 
